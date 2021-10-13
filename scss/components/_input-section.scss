@@ -1,0 +1,50 @@
+@use "utilities/variables";
+
+body {
+  margin: 0;
+  height: 100vh
+}
+
+.page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: variables.$main-blue;
+  height: 100%;
+  font-family: 'Londrina Solid', cursive;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: black;
+  color: variables.$main-blue;
+  border: none;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 30px;
+}
+
+.input-section .img {
+  background-image: url("https://picsum.photos/300/");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 3px;
+}
+
+.input-section .text {
+  width: 100%;
+}
+
+.input-section input {
+  background-color: variables.$main-blue;
+  border: none;
+  width: 60%;
+  padding: 5px 8px;
+}
