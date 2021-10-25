@@ -1,56 +1,16 @@
 @use "utilities/variables";
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  height: 100vh;
-  background-color: variables.$main-gray;
-}
-
-.page-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  font-family: 'Londrina Solid', cursive;
-}
-
 .input-section {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background-color: variables.$main-green;
-  color: variables.$main-gray;
-  padding: 30px 30px 50px 30px;
-  margin: 20px;
-  border-radius: 20px;
-  border: 2px outset variables.$main-light-gray;
 }
 
-.input-section h2 {
-  font-size: 2.2rem;
-  margin: 0;
-}
-
-.input-section h6 {
-  font-size: 1.05rem;
-  margin: 7px 0;
-}
-
-.input-section .fa-smile {
-  margin-left: 5px;
-}
-
-.input-section .img {
-  background-image: url("https://picsum.photos/1000/");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 400px;
+.input-section .img, .input-section img {
+  display: flex;
+  height: auto;
   width: 100%;
   margin-top: 20px;
   border-radius: 5px;
@@ -60,59 +20,53 @@ body {
   width: 100%;
 }
 
-.input-section .text div {
+.input-section .bottom-row {
   display: flex;
   flex-direction: column;
-  margin-right: 20px;
 }
 
-.input-section input {
-  background-color: variables.$main-gray;
-  color: white;
-  border: none;
-  border-radius: 5px;
+.input-section .input-submit {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   height: 35px;
-  padding: 0 10px;
 }
 
-.input-section .fa-igloo {
-  position: absolute;
-  top: 36px;
-  right: 30px;
-  font-size: 4rem;
-  z-index: 10;
+.input-section .email {
+  background-color: variables.$main-gray;
+  border: 2px solid variables.$main-gray;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin-right: 20px;
+  flex-grow: 1;
+}
+
+.input-section .submit {
+  padding: 0 15px;
+  border: 2px solid variables.$off-white-clear;
+  border-radius: 5px;
+  background-color: variables.$main-gray;
+}
+
+.input-section .submit:hover {
+  border: 2px solid variables.$off-white;
+}
+
+.input-section .submit:focus {
+  outline: none;
 }
 
 
 // Media Queries -------------------------
-@media (max-width:520px) {
-  .input-section .fa-igloo {
-    top: 20px;
-    font-size: 3rem;
-  }
-}
-
-@media (min-width:769px) {
-  .input-section .img {
-    height: 500px;
-  }
-}
-
 @media (min-width:769px) and (max-width:1024px) {
-  .input-section .text div {
+  .input-section .bottom-row {
     flex-direction: row;
     justify-content: space-between;
     margin: 0;
   }
 
-  .input-section input {
-    width: 40%;
-  }
-
-  .input-section .fa-igloo {
-    top: 20px;
-    font-size: 3rem;
+  .input-section .input-submit {
+    width: 46%;
   }
 }
 
@@ -120,31 +74,18 @@ body {
   .input-section {
     flex-direction: row;
     align-items: flex-start;
-    width: 965px;
-    padding: 20px;
   }
 
-  .input-section .img {
+  .input-section .img, .input-section img {
     margin: 0;
+    width: 450px;
   }
 
-  .input-section h2 {
-    font-size: 2.8rem;
-    margin: 0;
+  .input-section .input-submit {
+    width: 100%;
   }
 
-  .input-section h6 {
-    font-size: 1.2rem;
-    margin: 10px 0;
-  }
-
-  .input-section input {
-    width: 353px;
-  }
-
-  .input-section .fa-igloo {
-    top: 270px;
-    left: 140px;
-    font-size: 12rem;
+  .input-section .submit {
+    margin-right: 20px;
   }
 }

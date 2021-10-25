@@ -1,5 +1,10 @@
-// Components ----------------------
-@use "components/input-section";
 
 // Utilities ----------------------
 @use "utilities/variables";
+@use "utilities/text";
+
+
+// Components ----------------------
+@use "components/body";
+@use "components/input-section";
+@use "components/image-zone";

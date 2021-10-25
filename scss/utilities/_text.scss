@@ -1,0 +1,74 @@
+@use "utilities/variables";
+
+
+.input-section h2, .input-section h6 {
+  color: variables.$main-gray;
+  font-family: 'Londrina Solid', cursive;
+}
+
+.input-section button, .input-section input {
+  font-family: 'Nunito', sans-serif;
+  color: variables.$off-white;
+}
+
+.input-section i {
+  color: variables.$main-gray;
+}
+
+.input-section button i, .input-section input i {
+  color: variables.$off-white;
+}
+
+.input-section h2 {
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.input-section h6 {
+  font-size: 1.1rem;
+  margin: 7px 0;
+}
+
+.input-section .fa-smile {
+  margin-left: 5px;
+}
+
+
+// Media Queries -------------------------
+@media (min-width:600px) {
+  .input-section h6 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width:769px) {
+  .input-section h2 {
+    font-size: 3.1rem;
+  }
+
+  .input-section h6 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width:900px) {
+  .input-section h6 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width:1025px) {
+  .input-section h2 {
+    font-size: 4rem;
+    margin: 0;
+  }
+
+  .input-section h6 {
+    font-size: 1.4rem;
+    margin: 10px 0;
+  }
+
+  .input-section .fa-smile {
+    margin-left: 10px;
+  }
+}
