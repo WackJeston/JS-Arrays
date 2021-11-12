@@ -8,9 +8,10 @@
   width: 100%;
 }
 
-.input-section .img, .input-section img {
-  display: flex;
-  height: auto;
+.input-section .img {
+  background-position: bottom;
+  background-size: cover;
+  height: 400px;
   width: 100%;
   margin-top: 20px;
   border-radius: 5px;
@@ -76,16 +77,27 @@
     align-items: flex-start;
   }
 
-  .input-section .img, .input-section img {
+  .input-section .img {
     margin: 0;
-    width: 450px;
+    height: 500px;
+    flex-grow: 1;
+  }
+
+  .input-submit .text {
+    display: flex;
   }
 
   .input-section .input-submit {
-    width: 100%;
+    width: 420px;
   }
 
   .input-section .submit {
     margin-right: 20px;
+  }
+}
+
+@media (min-width:1250px) {
+  .input-section .input-submit {
+    width: 500px;
   }
 }

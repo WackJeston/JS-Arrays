@@ -33,3 +33,10 @@ body {
     width: 900px;
   }
 }
+
+@media (min-width:1250px) {
+  .content-container {
+    padding: 20px;
+    width: 1140px;
+  }
+}
