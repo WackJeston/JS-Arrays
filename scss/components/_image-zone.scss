@@ -1,28 +1,60 @@
 @use "utilities/variables";
 
 .image-zone {
+  display: flex;
+  flex-direction: column;
   height: 0px;
-  max-height: 1000px;
+  max-height: 1000000px;
   width: 100%;
-  margin-top: 0px;
+  margin: 0px;
+  padding: 0;
   background-color: variables.$off-white;
   border-radius: 5px;
   transition: all 300ms ease-in-out;
 }
 
 .image-zone div {
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-grow: 1;
-  min-height: 100px;
-  max-height: 100px;
-  background-color: blue;
+  height: 200px;
+  margin: 0 5px 10px 5px;
   border-radius: 5px;
-  margin: 0 10px 10px 10px;
 }
 
-.image-zone div img {
-  flex-grow: 1;
-  width: 35%;
-  border-radius: 20px;
+.image-zone div .list-item-img {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.image-zone div .list-item-info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: variables.$main-light-gray-extra-clear;
+}
+
+.image-zone div .list-item-info p {
+  margin: 0 0 10px 0;
+}
+
+@media (min-width:1025px) {
+  .image-zone {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .image-zone div {
+    min-width: 400px;
+  }
 }
