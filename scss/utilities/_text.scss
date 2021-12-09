@@ -41,6 +41,11 @@
   color: variables.$off-white;
 }
 
+.image-zone .email-section-container h2 {
+  font-family: 'Londrina Solid', cursive;
+  color: variables.$main-gray;
+}
+
 
 // Media Queries
 @media (min-width:600px) {

@@ -7,16 +7,10 @@ const formElement = document.querySelector("#form")
 function handleForm(event) { event.preventDefault(); }
 formElement.addEventListener('submit', handleForm);
 
-// Checking for Page ReSizing
-window.addEventListener("resize", function(){
-  zoneSize()
-})
-
 // Submit (This validates the given email and runs the rest of my functions.)
 submitElement.addEventListener("click", function(){
   if (emailValidator.test(emailElement.value) == true){
     emailElement.style.border = "2px solid green"
-    zoneGrow()
     getImages()
   } else{
     emailElement.style.border = "2px solid red"

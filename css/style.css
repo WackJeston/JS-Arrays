@@ -35,6 +35,11 @@
   color: #f9f7f5;
 }
 
+.image-zone .email-section-container h2 {
+  font-family: "Londrina Solid", cursive;
+  color: #272727;
+}
+
 @media (min-width: 600px) {
   .input-section h6 {
     font-size: 1.3rem;
@@ -81,31 +86,18 @@ body {
   background-color: #272727;
 }
 
-.page-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  max-width: 100%;
-}
-
 .content-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  max-height: 1000000px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #14a76c;
-  padding: 20px 20px 30px 20px;
+  padding: 20px;
   border-radius: 20px;
   border: 2px outset rgba(100, 100, 100, 0.7);
 }
@@ -259,19 +251,23 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   height: 0px;
   max-height: 1000000px;
   width: 100%;
   margin: 0px;
-  padding: 0 0 0 10px;
-  background-color: #f9f7f5;
-  border-radius: 5px;
+  padding: 0px;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
 
-.image-zone div {
+.image-zone .extra-layer {
   position: relative;
+}
+
+.image-zone .email-section-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -279,22 +275,37 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  height: 200px;
-  margin: 0 5px 10px 0;
+  height: 300px;
   border-radius: 5px;
+  background-color: #272727;
+  overflow-x: auto;
+  margin-top: 10px;
 }
 
-.image-zone div .list-item-img {
+.image-zone .email-section-container h2 {
+  position: absolute;
+  left: 0;
+  top: -0.6rem;
+  background-color: rgba(249, 247, 245, 0.6);
+  border-radius: 5px 0;
+  padding: 7px 12px;
+  z-index: 1;
+}
+
+.email-section-container .list-item-img {
+  position: relative;
   height: 100%;
   width: 100%;
+  min-width: 350px;
   background-position: center;
   background-size: cover;
 }
 
-.image-zone div .list-item-info {
+.email-section-container .following-imgs {
+  margin-right: 2px;
+}
+
+.email-section-container .list-item-info {
   position: absolute;
   top: 0;
   right: 0;
@@ -317,21 +328,12 @@ body {
   background-color: rgba(100, 100, 100, 0.4);
 }
 
-.image-zone div .list-item-info p {
+.email-section-container div .list-item-info p {
   margin: 0 0 10px 0;
 }
 
-@media (min-width: 1025px) {
-  .image-zone {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-
-  .image-zone div {
-    min-width: 400px;
+@media (min-width: 1250px) {
+  .email-section-container .list-item-img {
+    min-width: 550px;
   }
 }

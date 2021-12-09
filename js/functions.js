@@ -1,12 +1,15 @@
 let imageZone = document.querySelector("#images")
 const image = document.querySelector("#img")
 let onLoad = true
+let firstTime = true
 let counter1 = 0
 let counter2 = 0
 let imageUrl = ""
 let imageAuthor = ""
 let oldImageUrl = ""
 let oldImageAuthor = ""
+
+const emails = []
 
 // Using the data that the Axios.JS file grabbed from Picsum, this function creates usable varibales and displays the images on the page.
 function getRandomImage(data){
@@ -19,8 +22,19 @@ function getRandomImage(data){
   // This section uses JQuery to create my list of objects and their contents.
   if (onLoad == false){
     let email = document.querySelector("#email").value
-    $("#images").append($("<div><div class='list-item-img'></div><div class='list-item-info'><p>" + email + "</p><p><i class='fas fa-camera'></i> : " + oldImageAuthor + "</p></div></div>"))
-    $(".list-item-img").last().css("background-image", 'url(' + oldImageUrl + ')')
+    let emailName0 = email.replace(".", "")
+    let emailName = emailName0.replace("@", "")
+    if (emails.includes(email) == false){
+      zoneGrow()
+      emails.push(email)
+      $("#images").prepend($("<div class='extra-layer'><div class='email-section-container " + emailName + "'><h2>" + email + "</h2><div class='list-item-img'><div class='list-item-info'><p><i class='fas fa-camera'></i> : " + oldImageAuthor + "</p></div></div></div></div>"))
+      $("." + emailName + " .list-item-img").first().css("background-image", 'url(' + oldImageUrl + ')')
+    } else {
+      $("#images ." + emailName).prepend($("<div class='list-item-img following-imgs'><div class='list-item-info'><p><i class='fas fa-camera'></i> : " + oldImageAuthor + "</p></div></div>"))
+      $("." + emailName + " .list-item-img").first().css("background-image", 'url(' + oldImageUrl + ')')
+    }
+    // $("#images").append($("<div><div class='list-item-img'></div><div class='list-item-info'><p>" + email + "</p><p><i class='fas fa-camera'></i> : " + oldImageAuthor + "</p></div></div>"))
+    // $(".list-item-img").last().css("background-image", 'url(' + oldImageUrl + ')')
   }
   // Here the variables are updated to be ready for the next cycle of this function.
   oldImageUrl = imageUrl
@@ -31,22 +45,15 @@ function getRandomImage(data){
 // This function keeps track of how many rows their should be in the list section.
 const zoneGrow = function(){
   imageZone = document.querySelector("#images")
-  counter1 = counter1 + 1
-  counter2 = counter2 + 0.5
-  zoneSize()
-  imageZone.style.marginTop = "20px"
-  imageZone.style.paddingTop = "10px"
-}
-
-// This section calculates how tall the list area is, and if their should be 1 or 2 columns.
-const zoneSize = function(){
-  let windowWidth = window.innerWidth
-  if (windowWidth < 1025){
-    let zoneHeight = counter1 * 210
-    imageZone.style.height = `${zoneHeight}px`
+  if (firstTime == true){
+    imageZone.style.height = "300px"
+    imageZone.style.marginTop = "10px"
+    imageZone.style.marginBottom = "10px"
+    firstTime = false
   } else {
-    let counter2Round = Math.round(counter2)
-    let zoneHeight = counter2Round * 210
-    imageZone.style.height = `${zoneHeight}px`
+    counter1 = counter1 + 1
+    let zoneHeight1 = counter1 * 310
+    let zoneHeight2 = zoneHeight1 + 300
+    imageZone.style.height = zoneHeight2 + "px"
   }
 }
