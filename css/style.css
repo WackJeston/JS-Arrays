@@ -40,6 +40,18 @@
   color: #272727;
 }
 
+.github-link {
+  font-family: "Londrina Solid", cursive;
+  color: rgba(249, 247, 245, 0.6);
+  font-size: 0.9rem;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.github-link:hover {
+  color: #f9f7f5;
+}
+
 @media (min-width: 600px) {
   .input-section h6 {
     font-size: 1.3rem;
@@ -78,6 +90,15 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -100,6 +121,18 @@ body {
   padding: 20px;
   border-radius: 20px;
   border: 2px outset rgba(100, 100, 100, 0.7);
+}
+
+.github-link {
+  margin: 20px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.github-link i {
+  position: relative;
+  top: 2px;
+  margin-left: 7px;
 }
 
 @media (min-width: 1025px) {

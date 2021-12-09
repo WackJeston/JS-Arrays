@@ -46,6 +46,18 @@
   color: variables.$main-gray;
 }
 
+.github-link {
+  font-family: 'Londrina Solid', cursive;
+  color: variables.$off-white-clearish;
+  font-size: .9rem;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.github-link:hover {
+  color: variables.$off-white;
+}
+
 
 // Media Queries
 @media (min-width:600px) {
